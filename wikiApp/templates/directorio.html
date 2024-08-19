@@ -1,32 +1,13 @@
-{% load static %}
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>PROYECTO WIKIAPP</title>
-        
-        <!--INCLUSION DE BOOTSTRAP-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="row">
-            <div class="col-lg-2 bg-primary">
-            <h2>Temas</h2>
-            <form>
-                <input type="text" class="form-control">
-                <input type="submit" class="btn btn-success" value="Buscar">
-            </form>
-           
-            <div>
-                <a>Crear Nuevo Tema</a>
-            </div>
-            <div>
-                <a>Crear Nuevo Articulo</a>
-            </div>
-        </div>
-        <div class="col-lg-10 bg-success">
-            SECCION DERECHA
-        </div>
-    </body>
-</html>
+{% block title %}
+    Directorio
+{% endblock %}
+
+{% block contenido %}
+    {% for temaInfo in listaTemas %}
+    <div>
+        <a href="{% url 'wikiApp:vistaTema' temaInfo.id %}">{{ temaInfo.nombreTema }} {{ temaInfo.descripcionTema }}</a>
+    </div>
+    {% endfor %}
+{% endblock %}
