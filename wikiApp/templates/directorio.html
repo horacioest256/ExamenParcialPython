@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Directorio
+    Wiki-Horacio
 {% endblock %}
 
 {% block contenido %}
-    {% for temaInfo in listaTemas %}
+    {% for articuloInfo in listaArticulos %}
     <div>
-        <a href="{% url 'wikiApp:vistaTema' temaInfo.id %}">{{ temaInfo.nombreTema }} {{ temaInfo.descripcionTema }}</a>
+        <a href="{% url 'wikiApp:vistaArticulo' articuloInfo.id %}">{{ articuloInfo.titulo }} </a>
     </div>
     {% endfor %}
 {% endblock %}
+

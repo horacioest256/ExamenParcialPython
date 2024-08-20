@@ -6,16 +6,19 @@
 
 
 {% block contenido %}
+<br><br>
 <h2>Crear nuevo Tema</h2>
-            <form class="row">   
+            <form class="row mt-5" method="post" action="{% url 'wikiApp:nuevoTema' %}">  
+                {% csrf_token %} 
                 <div>
                     <label>Ingresar Tema</label>
-                    <input type="text" name="nombreTema">
+                    <input type="text" name="nombre" class="form-control form-control-sm">
                 </div>
                 <div>
                     <label>Descripcion Tema</label>
-                    <input type="text" name="descripcionTema">
-                </div>
+                    <textarea class="form-control" name="descripcion" rows="3" class="form-control form-control-lg">
+                </textarea>
+                    </div>
                 <div>
                     <input type="submit" value="Registrar">
                 </div>

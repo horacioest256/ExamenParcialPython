@@ -1,20 +1,20 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    {{ objArticulo.tituloArticulo }} {{ objtema.tituloArticulo }}
+    {{ objArticulo.titulo }} {{ objtema.contenido }}
 {% endblock %}
 
 {% block contenido %}
-    <h1>{{ objArticulo.TituloArticulo }} </h1>
-    <br>
-    <div>
-        <h4>Titulo : {{ objArticulo.TituloArticulo }}</h4>
+    
+    <br><br>
+    <div class="form-control form-control-sm mb-3 mt-5">
+        <h4>Titulo :</h4> {{ objArticulo.titulo }}
     </div>
-    <div>
-        <h4>Contenido : {{ objArticulo.descripcionArticulo }}</h4>
+    <div class="form-control form-control-sm mb-3">
+        <h4>Contenido : </h4>{{ objArticulo.contenido }}
     </div>
 
-    <div>
-        <h4>Tema : {{ objTema.temaRelacionado.nombreDepartamento }}</h4>
+    <div class="form-control form-control-sm mb-3">
+        <h4>Tema : </h4>{{ objArticulo.temaRelacionado.nombre }}
     </div>
    {% endblock %}

@@ -7,6 +7,6 @@ urlpatterns = [
     path('', views.directorio, name='directorio'),
     path('nuevoTema',views.nuevoTema,name='nuevoTema'),
     path('nuevoArticulo',views.nuevoArticulo,name='nuevoArticulo'),
-    #path('vistaDepartamento/<str:idDepartamento>',views.vistaDepartamento,name='vistaDepartamento'),
-    #path('vistaUsuario/<str:idPersona>',views.vistaUsuario,name='vistaUsuario')
+    path('vistaTema/<str:idTema>',views.vistaTema,name='vistaTema'),
+    path('vistaArticulo/<str:idArticulo>',views.vistaArticulo,name='vistaArticulo')
 ]

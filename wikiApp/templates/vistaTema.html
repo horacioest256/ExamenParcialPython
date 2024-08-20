@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ objTema.nombreTema }}
+{% endblock %}
+
+{% block contenido %}
+    <br><br>
+    
+    <div class="form-control form-control-sm mb-3 mt-5">
+        <h4>Tema :</h4>
+        <h4>{{ objTema.nombreTema }}</h4>
+                {{ objTema.nombre }}
+    </div>
+    <div class="form-control form-control-sm ">
+        <h4>Contenido :</h4>
+       
+        {{ objTema.descripcion }}
+    </div>
+    <br>
+   
+    <table class="table table-bordered">
+        <tr><td>
+        <h4>Articulos :</h4>
+        
+        {% for articuloInfo in listaArticulos %}
+        <div> 
+            <a href="{% url 'wikiApp:vistaArticulo' articuloInfo.id %}">{{ articuloInfo.titulo }} </a>
+        </div>
+       
+
+    {% endfor %}
+</td>
+</tr>
+</table>
+{% endblock %}

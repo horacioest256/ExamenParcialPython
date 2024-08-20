@@ -15,11 +15,12 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-lg-2">
-            <h2>Directorio</h2>
-            <form>
-                <input type="text" class="form-control">
+    <div class="row" >
+        <div class="col-lg-1" ></div>
+        <div class="col-lg-3">
+            <h2>Wiki Horacio</h2>
+            <form>      {% csrf_token %}
+                <input type="text" class="form-control" name="busqueda">
                 <input type="submit" class="btn btn-success" value="Buscar">
             </form>
             <div>
@@ -33,13 +34,15 @@
               <a href="{% url 'wikiApp:nuevoArticulo' %}">Crear nuevo Articulo</a>
             </div>
             <br>
-        <!--      {% for temasInfo in listaTemas %}-->
+            {% for temaInfo in listaTemas %}
             <div>
-             <!--   <a href="{% url 'wikiApp:vistaTemas' temasInfo.id %}">{{ temasInfo.nombreDepartamento }}</a>-->
+                <a href="{% url 'wikiApp:vistaTema' temaInfo.id %}">{{ temaInfo.nombre }}</a>
             </div>
-            <!-- {% endfor %} -->
+            {% endfor %}
+        
+          
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-8 mt-10">
             {% block contenido %}
             {% endblock %}
         </div>
