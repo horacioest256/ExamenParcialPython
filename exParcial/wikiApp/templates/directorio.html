@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wiki-Horacio
+{% endblock %}
+
+{% block contenido %}
+<br><br>
+<table class="table table-bordered">
+    <tr><td>
+    <h4>Articulos :</h4>
+    {% for articuloInfo in listaArticulos %}
+   <div>
+  
+        <a href="{% url 'wikiApp:vistaArticulo' articuloInfo.id %}">{{ articuloInfo.titulo }} </a>
+    </div>
+    {% endfor %}
+
+</td>
+</tr>
+</table>
+{% endblock %}
+<div>
